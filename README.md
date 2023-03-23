@@ -69,40 +69,71 @@ project_id integer foreign_key
 
 )
 
+
 salary (
+
 salary_id integer primary_key,
+
 pay numeric
+
 )
+
 
 position (
+
 position_id integer primary_key,
+
 position_name, varchar(50),
+
 salary_id integer foreign_key
+
 )
+
 
 divisions (
+
 divisions_id integer primary_key,
+
 department varchar(50),
+
 department_type varchar(50)
+
 )
+
 
 structura (
+
 structura_id integer primary_key,
+
 group varchar(50),
+
 structura_type varchar(50),
+
 structura_title varchar(50)
+
 )
+
 
 branch address (
+
 address_id integer primary_key,
+
 region varchar(50),
+
 city varchar(50),
+
 street varchar(50),
+
 house varchar(50)
+
 )
 
+
 project (
+
 project_id integer primary_key,
+
 project_name varchar(50)
+
 )
 
