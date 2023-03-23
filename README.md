@@ -29,67 +29,70 @@
 Какие данные хранятся в этих таблицах :
 
 1. Сотрудники (staff) - ФИО (varchar(50)), дата найма сотрудника (date);
-2. Данные о зарплате сотрудников (salary) - (serial); 
-3. Должность (position) - занимаемая должность сотрудника (varchar(50));
-4. Подразделение (devision) - Структурное подразделение (varchar(50));
-5. Тип подразделения (structura) - отдел в котором работает сотрудник (varchar(50));
+2.Данные о зарплате сотрудников (salary) - (numeric); 
+3.Должность (position) - занимаемая должность сотрудника (varchar(50));
+4.Подразделение (division) - Структурное подразделение (varchar(50));
+5.Тип подразделения (structura) - отдел в котором работает сотрудник (varchar(50));
 6. Адреса филиала (branch_address) - адрес (varchar(50));
 7. Проекты (project) - наименование проекта для конкретного сотрудника(varchar(50)).
 
 
 Какой тип данных у столбцов в этих таблицах, если данные хранятся в PostgreSQL.
-1. фио - строковый (varchar)
-2. оклад - числовой (decimal/numeric)
-3. должность - строковый (varchar)
-4. тип подразделения - строковый (varchar)
-5. дата - дата (tinyint)
-6. адрес - местонахождение филиала (varchar)
-7. проект - строковый (varchar)
+
+1 фио - строковый (varchar)
+2 ОКЛАД - числовой (decimal/numeric)
+3 должность - строковый (varchar)
+4 Тип подразделения - строковый (varchar)
+5 Дата - дата (date)
+6 Адрес - местонахождение филиала (varchar)
+7 Проект - строковый (varchar)
 
 staff (
-staff_id primary_key,
+staff_id integer primary_key,
 FIO varchar(50),
-devision_id varchar(50),
-structura_id varchar(50),
+divisions_id integer foreign_key,
+structura_id integer foreign_key,
 date date,
-salary_id numeric,
-address_id varchar(50),
-project_id varchar(50),
+position_id integer foreign_key,
+salary_id numeric foreign_key,
+address_id integer foreign_key,
+project_id integer foreign_key
 )
 
 salary (
-salary_id primary_key
-staff_id
+salary_id integer primary_key,
+pay numeric
 )
 
 position (
-position _id primary_key
-position _name, varchar(50)
-salary, money
+position_id integer primary_key,
+position_name, varchar(50),
+salary_id integer foreign_key
 )
 
-devision (
-devision_id primary_key
-department varchar(50)
-department_type
+divisions (
+divisions_id integer primary_key,
+department varchar(50),
+department_type varchar(50)
 )
 
 structura (
-structura_id primary_key
-group varchar(50)
-structura_type
-structura_title
+structura_id integer primary_key,
+group varchar(50),
+structura_type varchar(50),
+structura_title varchar(50)
 )
 
-branch_address (
-address_id primary_key
-edge varchar(50)
-city varchar(50)
-street varchar(50)
+branch address (
+address_id integer primary_key,
+region varchar(50),
+city varchar(50),
+street varchar(50),
 house varchar(50)
 )
 
 project (
-project_id primary_key
-project_name, varchar(50))
+project_id integer primary_key,
+project_name varchar(50)
 )
+
