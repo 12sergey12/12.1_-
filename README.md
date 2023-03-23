@@ -47,16 +47,26 @@
 6. Адрес - местонахождение филиала (varchar)
 7. Проект - строковый (varchar)
 
->staff (
->staff_id integer primary_key,
->FIO varchar(50),
->divisions_id integer foreign_key,
->structura_id integer foreign_key,
->date date,
->position_id integer foreign_key,
->salary_id numeric foreign_key,
->address_id integer foreign_key,
->project_id integer foreign_key
+staff (
+
+staff_id integer primary_key,
+
+FIO varchar(50),
+
+divisions_id integer foreign_key,
+
+structura_id integer foreign_key,
+
+date date,
+
+position_id integer foreign_key,
+
+salary_id numeric foreign_key,
+
+address_id integer foreign_key,
+
+project_id integer foreign_key
+
 )
 
 salary (
