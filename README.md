@@ -51,7 +51,11 @@ staff (
 
 staff_id integer primary_key,
 
-FIO varchar(50),
+last_name varchar(50),
+
+first_name varchar(50),
+
+patronymic varchar(50),
 
 divisions_id integer foreign_key,
 
